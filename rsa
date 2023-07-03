@@ -4,7 +4,9 @@
 from math import gcd
 from sys import argv
 
-
+"""
+this is the function to return the trivials of n
+"""
 def challenging(n):
     x = 2
     y = 2
@@ -19,6 +21,9 @@ def challenging(n):
 
 
 def read_file():
+    """
+    the function to deal with the file reading
+    """
     with open(argv[1]) as f:
         for n in f:
             num = int(n)
@@ -26,11 +31,10 @@ def read_file():
                 print("{:d}={}*{}".format(num, num // 2, 2))
             else:
                 p = challenging(num)
-                f1 = p
-                f2 = int(num / p)
-                print("{}={}*{}".format(num, f1, f2))
+                factor1 = p
+                factor2 = int(num / p)
+                print("{}={}*{}".format(num, factor1, factor2))
 
 
 if __name__ == "__main__":
     read_file()
-
